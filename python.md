@@ -17,14 +17,19 @@
 
 Python 中有三种最基本的变量:
 
-
-
-
 ```python
 integer_val = 5
 float_val = 5.0
 string_val = "5.0"
 ```
+
+前面讲过, Python 中一切皆是对象, 都有它自己的属性和方法. 在 `ipython` 中定义整型变量 `integer_val`, 变量后面加`.`, 然后按下 `Tab` 键, 你会看到它里面还有很多东西. 所以整型变量在 Python 中不仅仅代表一个整型的值(这里值是 5), 还附加了很多其它的东西, 如:
+
+```
+integer_val.real # 整型的实部, 等于 5
+integer_val.imag # 整型的虚部, 等于 0
+```
+
 
 
 
