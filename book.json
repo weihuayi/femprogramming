@@ -1,0 +1,8 @@
+{
+    "plugins": ["mathjax", "image-captions", "fontsettings"],
+    "pluginsConfig": {
+        "fontSettings": {
+            "size": 1
+        }
+    }
+}
