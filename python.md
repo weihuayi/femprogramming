@@ -18,13 +18,14 @@
 Python 中有三种最基本的变量:
 
 
+
+
 ```python
 integer_val = 5
 float_val = 5.0
 string_val = "5.0"
 ```
 
-e
 
 
 
