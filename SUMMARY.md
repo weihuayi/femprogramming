@@ -8,5 +8,6 @@
 * [问题集](./problem.md)
 * [Python 容器: list](python-zhong-de-ji-ben-shu-ju-jie-gou-yu-liu-cheng-kong-zhi.md)
 * [Python 容器：tuple](python-rong-qi-ff1a-tuble.md)
-* [Hypre 简介](hypre.md)
+* [Hypre 安装笔记](hypre.md)
+* 稀疏矩阵
 
