@@ -11,4 +11,5 @@
 * [Hypre 安装笔记](hypre.md)
 * [稀疏矩阵](xi-shu-ju-zhen.md)
 * [Python 函数](python-han-shu.md)
+* 散度定理
 
