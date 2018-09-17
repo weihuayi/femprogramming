@@ -15,6 +15,7 @@ Hypre 遵循的开源协议为 [LGPL](https://en.wikipedia.org/wiki/GNU_Lesser_G
 * 下载安装 [MicroSoft .Net Framework 4.7](https://www.microsoft.com/zh-CN/download/details.aspx?id=55170)
 * 下载安装 [Visual Studio IDE Community 2017](https://visualstudio.microsoft.com/zh-hans/) 
 * 安装 [mpi](https://www.microsoft.com/en-us/download/details.aspx?id=56727)
+* 安装 [CMake](https://cmake.org/download/)
 
 
 

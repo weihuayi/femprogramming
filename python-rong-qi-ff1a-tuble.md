@@ -9,8 +9,8 @@
 
 Python 中用 `()` 来创建元组， 如：
 ```python
-thistuble = (`cat`, `dog`, 1)
-print(thistuble)
+thistuple = (`cat`, `dog`, 1)
+print(thistuple)
 ```
 注意元组中的元素可以是任何 Python 对象， 包括元组本身。 
 
