@@ -12,4 +12,7 @@
 * [Hypre 安装笔记](hypre.md)
 * [散度定理](san-du-ding-li.md)
 * SageMath 简介
+* [重心坐标](zhong-xin-zuo-biao.md)
+* [线性有限元](xian-xing-you-xian-yuan.md)
+* Lagrange 插值向量化实现
 
