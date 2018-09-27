@@ -8,8 +8,6 @@ $$
 \int_{\Omega} \nabla\cdot\mathbf F~ \mathrm d \mathbf x = \int_{\partial \Omega}\mathbf  F\cdot\mathbf n ~\mathrm d s
 $$
 
-这就是**散度定理**.
-
 在一维情形下， 散度定理等价于微积分第二基本定理或“牛顿-莱布尼茨公式”， 它的内容如下：
 设 $a, b\in \mathbb R$, 设 $f, F:[a, b]\rightarrow \mathbb R$， 且满足：
 
@@ -21,9 +19,22 @@ $$
 \int_a^b f(t) \mathrm d t = F(b) - F(a)
 $$
 
-在二维情形下， 散度定理等价于格林定理
+在二维情形下， 散度定理等价于格林公式。
 
+散度定理在数值计算的理论和算法中非常有用， 你一定要牢记它。 
 
+比如， 它可以用来计算多边形的面积和多面体的体积。 以多边形的面积计算为例， 给定一个多边形 $\Omega$， 假设它有 $n$ 个按逆时针排序的顶点 $\{\mathbf x_i \}_{i=0}^{n-1}$, $n$ 条边 $\{e_i:=(\mathbf x_i, \mathbf x_{i+1}\}_{i=0}^{n-1}$(注意这里假定 $\mathbf x_n = \mathbf x_0$)， 第 $i$ 条边 $e_i$ 的单位外法线向量记为 $\mathbf n_i$ 
+
+推广一下， 还可以把一些特殊一点的函数在高维区域函数积分的问题在变成低维区域积分的问题。 
+
+还可以把高阶的微分算子变成低阶的微分算子。 比如 Laplace 算子：
+$$
+\Delta u(x, y) =\nabla\cdot\nabla u =   \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} 
+$$
+
+$$
+\Delta u(x, y, z) =\nabla\cdot\nabla u =   \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}
+$$
 
 $$
 \begin{aligned}
@@ -45,7 +56,3 @@ v\\0
 \end{pmatrix} \mathrm d \mathbf x = 
 \int_{\partial \Omega} v\mathbf n_y \mathrm d \mathbf s
 $$
-
-利用散度定理： 
-* 求多边形的面积 
-* 求多面体的体积
