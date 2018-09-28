@@ -69,8 +69,8 @@ CSC 可以用下面三个数组来表示矩阵 $$A$$:
 $$
 \begin{eqnarray} 
 data &=& [21,12,1,33,3,10,4], \\
-indices_{row} &=& [1,3,3,1,2,0,3], \text{# 行指标数组}\\
-indptr_{col} &=& [0,2,3,5,7]. \text{# 列起始位置数组}
+indices &=& [1,3,3,1,2,0,3], \text{# 行指标数组}\\
+indptr &=& [0,2,3,5,7]. \text{# 列起始位置数组}
 \end{eqnarray}
 $$
 其中， `data[indptr[i]:indptr[i+1]]` 是**第 i 列**所有非零元， `indices[indptr[i]:indptr[i+1]]` 是**第 i 列**所有非零元的**行指标**。 
