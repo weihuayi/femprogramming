@@ -25,7 +25,7 @@ $$
 \end{align}
 $$
 
-推广一下， 还可以把一些特殊一点的函数在高维区域函数积分， 转化为低维区域积分的问题。 如**齐次函数**
+推广一下， 还可以把一些特殊一点的函数在高维区域函数积分， 转化为低维区域积分的问题。 如**$$q$$ 次齐次函数**
 
 $$
 f(\lambda\mathbf x) = \lambda^qf(\mathbf x),\quad \forall \lambda > 0
@@ -43,19 +43,13 @@ $$
 qf(\mathbf x) = \nabla f(\mathbf x)\cdot\mathbf x
 $$
 
-给定一个定义在多边形 $E$ 上的齐次函数 $f(\mathbf x)$, 记 
+给定一个定义在多边形 $$\Omega$$ 上的齐次函数 $$f(\mathbf x)$$, 记 
 
 $$
 \mathbf F: = \mathbf x f(\mathbf x)
 $$
 
-代入散度定理公式
-
-$$
-\int_E\nabla\cdot\mathbf F \mathrm d \mathbf x = \int_{\partial E} \mathbf F\cdot \mathbf n\mathrm ds
-$$
-
-可得
+代入散度定理公式可得
 
 $$
 \begin{align}
