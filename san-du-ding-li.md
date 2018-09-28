@@ -77,7 +77,25 @@ $$
 \int_\Omega f(\mathbf x)\mathrm d \mathbf x = \frac{1}{q+2}\sum_{i=0}^{n-1}(\mathbf x_i\cdot \mathbf n_i)\int_{e_i} f(\mathbf x)\mathrm ds
 $$
 
-用好散度定理的一个关键是， 你要问自己**手头的向量函数 $$\mathbf F$$ 的具体形式是什么?** 
+用好散度定理的一个关键是， 你要问自己**手头的向量函数 $$\mathbf F$$ 的具体形式是什么?** 比如：
+
+$$
+\int_\Omega v_x \mathrm d \mathbf x = \int_\Omega \nabla\cdot \begin{pmatrix}
+v\\0
+\end{pmatrix} \mathrm d \mathbf x = 
+\int_{\partial \Omega} v\mathbf n_x \mathrm d \mathbf s
+$$
+
+$$
+\int_\Omega v_y \mathrm d \mathbf x = \int_\Omega \nabla\cdot \begin{pmatrix}
+v\\0
+\end{pmatrix} \mathrm d \mathbf x = 
+\int_{\partial \Omega} v\mathbf n_y \mathrm d \mathbf s
+$$
+
+
+
+
 
 还可以把高阶的微分算子变成低阶的微分算子, 给定一个偏微分方程，要变成**弱形式**就要用到这个定理。 比如给定一个适当光滑的函数 $$u$$， 其 Laplace 算子定义为：
 $$
@@ -97,18 +115,7 @@ $$
 $$
 -\int_{\Omega} v\Delta u~\mathrm d \mathbf x = \int_{\Omega}\nabla u\cdot\nabla v~\mathrm d \mathbf x
 $$
-这个形式的神奇之处在于， 左边是对 $$u$$ 求二阶导数， 右边 $$u$$ 的导数就只剩下一阶， 相当于把二阶导数转给函数 $$v$$了。 
+这个形式的神奇之处在于， 左边是对 $$u$$ 求二阶导数， 右边 $$u$$ 的导数就只剩下一阶， 相当于把二阶导数转给函数 $$v$$ 了。 
 
-$$
-\int_\Omega v_x \mathrm d \mathbf x = \int_\Omega \nabla\cdot \begin{pmatrix}
-v\\0
-\end{pmatrix} \mathrm d \mathbf x = 
-\int_{\partial \Omega} v\mathbf n_x \mathrm d \mathbf s
-$$
 
-$$
-\int_\Omega v_y \mathrm d \mathbf x = \int_\Omega \nabla\cdot \begin{pmatrix}
-v\\0
-\end{pmatrix} \mathrm d \mathbf x = 
-\int_{\partial \Omega} v\mathbf n_y \mathrm d \mathbf s
-$$
+
