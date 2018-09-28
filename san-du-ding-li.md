@@ -85,8 +85,7 @@ $$
 $$
 \Delta u(x, y, z) =\nabla\cdot\nabla u =   \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}~~~(3D),
 $$
-给定两个适当
-
+给定两个适当光滑的函数 $$u$$ 和 $$v$$， 可得：
 $$
 \begin{aligned}
 \int_{\Omega} \nabla\cdot(v\nabla u)~\mathrm d \mathbf x &= \int_{\partial\Omega} v\nabla u\cdot\mathbf n~\mathrm d \mathbf s\\
