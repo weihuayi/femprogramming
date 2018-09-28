@@ -77,7 +77,9 @@ $$
 \int_\Omega f(\mathbf x)\mathrm d \mathbf x = \sum_{i=0}^{n-1}(\mathbf x_i\cdot \mathbf n_i)\int_{e_i} f(\mathbf x)\mathrm ds
 $$
 
-还可以把高阶的微分算子变成低阶的微分算子。 比如 Laplace 算子：
+用好散度定理的一个关键是， 你要问自己**手头的向量函数 $$\mathbf F$$ 的具体形式是什么?** 
+
+还可以把高阶的微分算子变成低阶的微分算子, 给定一个偏微分方程，要变成弱形式就要用到这个定理。 比如给定一个适当光滑的函数 $$u$$， 其 Laplace 算子定义为：
 $$
 \Delta u(x, y) =\nabla\cdot\nabla u =   \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}~~~(2D),
 $$
@@ -85,12 +87,10 @@ $$
 $$
 \Delta u(x, y, z) =\nabla\cdot\nabla u =   \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}~~~(3D),
 $$
-给定两个适当光滑的函数$$u$$和$$v$$， 可得：
+给定两个适当光滑的函数 $$u$$ 和 $$v$$， 可得：
 $$
-\begin{aligned}
-\int_{\Omega} \nabla\cdot(v\nabla u)~\mathrm d \mathbf x &= \int_{\partial\Omega} v\nabla u\cdot\mathbf n~\mathrm d \mathbf s\\
-\int_{\Omega} v\Delta u~\mathrm d \mathbf x + \int_{\Omega}\nabla u\cdot\nabla v~\mathrm d \mathbf x &= \int_{\partial\Omega} v\nabla u\cdot\mathbf n~\mathrm d \mathbf s
-\end{aligned}
+\int_{\Omega} \nabla\cdot(v\nabla u)~\mathrm d \mathbf x =
+\int_{\Omega} v\Delta u~\mathrm d \mathbf x + \int_{\Omega}\nabla u\cdot\nabla v~\mathrm d \mathbf x= \int_{\partial\Omega} v\nabla u\cdot\mathbf n~\mathrm d \mathbf s
 $$
 
 $$
