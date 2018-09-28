@@ -62,6 +62,16 @@ $$
 \end{align}
 $$
 
+$$
+\begin{align}
+& \int_{\partial E} (\mathbf x\cdot \mathbf n)  f(\mathbf x)\mathrm ds\\
+=& \sum_{e_i\in\partial E}\int_{e_i} (\mathbf x\cdot \mathbf n_i)  f(\mathbf x)\mathrm ds\\
+=& \sum_{e_i\in\partial E}\int_{e_i} [(\mathbf x - \mathbf x_i + \mathbf x_i)\cdot \mathbf n_i] f(\mathbf x)\mathrm ds\\
+=& \sum_{e_i\in\partial E}\int_{e_i} (\mathbf x_i\cdot \mathbf n_i)  f(\mathbf x)\mathrm ds\\
+=& \sum_{e_i\in\partial E}(\mathbf x_i\cdot \mathbf n_i)\int_{e_i} f(\mathbf x)\mathrm ds\\
+\end{align}
+$$
+
 还可以把高阶的微分算子变成低阶的微分算子。 比如 Laplace 算子：
 $$
 \Delta u(x, y) =\nabla\cdot\nabla u =   \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}~~~(2D),
