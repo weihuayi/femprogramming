@@ -7,7 +7,7 @@
 
 $$
 \begin{eqnarray} 
-\frac{\mbox{10 万阶矩阵的字节数}}{\mbox{1 GB 的字节数}} = \frac{10^5\times 10^5\times 8}{2^{10}\times 2^{10}\times 2^{10}} = 74.5 (GB), \end{eqnarray}
+\frac{\mbox{10 万阶矩阵的字节数}}{\mbox{1 GB 的字节数}} = \frac{10^5\times 10^5\times 8}{2^{10}\times 2^{10}\times 2^{10}} \approx 74.5 (GB), \end{eqnarray}
 $$
 
 
@@ -31,9 +31,7 @@ A = \begin{pmatrix}
  \end{pmatrix}
 $$
 
-
 **注意**下面我们采用 C\C++ 和 Python 的习惯， 矩阵行列编号都从 **0** 开始. 首先是 COO 格式， 可以**行优先存储**:
-
 
 $$
 \begin{eqnarray} 
@@ -43,9 +41,7 @@ J &=& [3, 0, 2, 2, 0, 1, 3].
 \end{eqnarray}
 $$
 
-
 也可以**列优先存储**:
-
 
 $$
 \begin{eqnarray}
@@ -54,7 +50,6 @@ I &=& [1, 3, 3, 1, 2, 0, 3], \\
 J &=& [0, 0, 1, 2, 2,, 3, 3]. \\ 
 \end{eqnarray}
 $$
-
 
 可以看到上面的两种格式， 同一行或同一列的指标存储有点冗余， 这里仍有改进空间。
 
@@ -67,6 +62,7 @@ indices &=& [3,0,2,2,0,1,3], \text{# 列指标数组}\\
 indptr &=& [0,1,3,4,7]. \text{# 行起始位置数组}\\
 \end{eqnarray}
 $$
+其中， `data[indptr[i]:indptr[i+1]]` 是第 i 行所有非零元， `indices[indptr[i]:indptr[i+1]]` 是第 i 行所有非零元的列指标。 注意， 这里用了 Python 中的**切片**语法 `start:stop:step`。 
 
 CSC 可以用下面三个数组来表示矩阵 $$A$$:
 
@@ -77,16 +73,17 @@ indices_{row} &=& [1,3,3,1,2,0,3], \text{# 行指标数组}\\
 indptr_{col} &=& [0,2,3,5,7]. \text{# 列起始位置数组}
 \end{eqnarray}
 $$
+其中， `data[indptr[i]:indptr[i+1]]` 是**第 i 列**所有非零元， `indices[indptr[i]:indptr[i+1]]` 是**第 i 列**所有非零元的**行指标**。 
 
-还以上面的 10 万阶方矩阵为例, 假设有 20 万个非零元, 用双精度存储， 指标用 32 位整型存储， 在 CSR 模式下, 它占的内存为\(以 MB 为单位\):
-
+还以上面的 10 万阶方矩阵为例, 假设有 20 万个非零元, 用双精度存储， 指标数组用 32 位整型存储， 在 CSR 模式下, 它占用内存为\(以 MB 为单位\):
 
 $$
 \begin{eqnarray} 
-\frac{10^5 \times 8 + 10^5 \times 4 + (10^5+1) \times 4}{2^{10}\times 2^{10}} \approx 1.52 (MB).
+\frac{2 \times 10^5 \times 8 + 10^5 \times 4 + (10^5+1) \times 4}{2^{10}\times 2^{10}} \approx 2.29 (MB).
 \end{eqnarray}
 $$
 
+哈哈, 内存节省了大概 33333 倍。
 
-哈哈, 内存节省了大概 5 万倍左右.
+上面只是讲了稀疏矩阵的存储格式， 下次再写点稀疏矩阵的运算。
 
