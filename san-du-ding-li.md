@@ -23,9 +23,17 @@ $$
 
 散度定理在数值计算的理论和算法中非常有用， 你一定要牢记它。 
 
-比如， 它可以用来计算多边形的面积和多面体的体积。 以多边形的面积计算为例， 给定一个多边形 $$\Omega$$， 假设它有 $$n$$ 个按逆时针排序的顶点 $$\{\mathbf x_i \}_{i=0}^{n-1}$$， $$n$$ 条边 $$\{e_i:=(\mathbf x_i, \mathbf x_{i+1}\}_{i=0}^{n-1}$$(注意这里假定 $$\mathbf x_n = \mathbf x_0$$)， 第 $$i$$ 条边 $$e_i$$ 的单位外法线向量记为 $$\mathbf n_i$$。 下面利用散度定理给出多边形面积的计算公式：
+比如， 它可以用来计算多边形的面积和多面体的体积。 以多边形的面积计算为例， 给定一个多边形 $$\Omega$$， 假设它有 $$n$$ 个按逆时针排序的顶点 $$\{\mathbf x_i \}_{i=0}^{n-1}$$， $$n$$ 条边 $$\{e_i:=(\mathbf x_i, \mathbf x_{i+1})\}_{i=0}^{n-1}$$(注意这里假定 $$\mathbf x_n = \mathbf x_0$$)， 第 $$i$$ 条边 $$e_i$$ 的单位外法线向量记为 $$\mathbf n_i$$。 下面利用散度定理给出多边形面积的计算公式：
 
 $$
+\begin{align}
+\int_\Omega \mathrm d\mathbf x = &\frac{1}{2}\int_\Omega\nabla\cdot\mathbf x \mathrm d\mathbf x \\
+=& \int_{\partial\Omega} (\mathbf x\cdot \mathbf n) \mathrm ds\\
+=& \sum_{e_i\in\partial \Omega}\int_{e_i} (\mathbf x\cdot \mathbf n_i)  \mathrm ds\\
+=& \sum_{e_i\in\partial\Omega}\int_{e_i} [(\mathbf x - \mathbf x_i + \mathbf x_i)\cdot \mathbf n_i]\mathrm ds\\
+=& \sum_{e_i\in\partial\Omega}\int_{e_i} (\mathbf x_i\cdot \mathbf n_i)  \mathrm ds\\
+=& \sum_{e_i\in\partial \Omega}(\mathbf x_i\cdot \mathbf n_i)\int_{e_i} \mathrm ds\\
+\end{align}
 $$
 
 推广一下， 还可以把一些特殊一点的函数在高维区域函数积分， 转化为低维区域积分的问题。 
