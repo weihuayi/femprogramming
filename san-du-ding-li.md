@@ -97,6 +97,7 @@ $$
 $$
 -\int_{\Omega} v\Delta u~\mathrm d \mathbf x = \int_{\Omega}\nabla u\cdot\nabla v~\mathrm d \mathbf x
 $$
+这个形式的神奇之处在于， 左边是对 $$u$$ 求二阶导数， 右边 $$u$$ 的导数就只剩下一阶， 相当于把二阶导数转给函数 $$v$$了。 
 
 $$
 \int_\Omega v_x \mathrm d \mathbf x = \int_\Omega \nabla\cdot \begin{pmatrix}
