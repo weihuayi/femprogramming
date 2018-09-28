@@ -8,18 +8,7 @@ $$
 \int_{\Omega} \nabla\cdot\mathbf F~ \mathrm d \mathbf x = \int_{\partial \Omega}\mathbf  F\cdot\mathbf n ~\mathrm d s
 $$
 
-在一维情形下， 散度定理等价于微积分第二基本定理或“牛顿-莱布尼茨公式”， 它的内容如下：
-设 $$a, b\in \mathbb R$$, 设 $$f, F:[a, b]\rightarrow \mathbb R$$， 且满足：
-
-* $$F$$ 连续，
-* $$f$$ 是 $$F$$ 的原函数， 即 $$\forall x \in (a, b)$$, $$F'(x) = f(x)$$,
-
-那么， 若 $$f$$ 黎曼可积， 则有
-$$
-\int_a^b f(t) \mathrm d t = F(b) - F(a)
-$$
-
-在二维情形下， 散度定理等价于格林公式。
+在一维情形下， 散度定理等价于微积分第二基本定理或“牛顿-莱布尼茨公式”。 在二维情形下， 散度定理等价于格林公式。
 
 散度定理在数值计算的理论和算法中非常有用， 你一定要牢记它。 
 
@@ -28,15 +17,56 @@ $$
 $$
 \begin{align}
 \int_\Omega \mathrm d\mathbf x = &\frac{1}{2}\int_\Omega\nabla\cdot\mathbf x \mathrm d\mathbf x \\
-=& \int_{\partial\Omega} (\mathbf x\cdot \mathbf n) \mathrm ds\\
-=& \sum_{e_i\in\partial \Omega}\int_{e_i} (\mathbf x\cdot \mathbf n_i)  \mathrm ds\\
-=& \sum_{e_i\in\partial\Omega}\int_{e_i} [(\mathbf x - \mathbf x_i + \mathbf x_i)\cdot \mathbf n_i]\mathrm ds\\
-=& \sum_{e_i\in\partial\Omega}\int_{e_i} (\mathbf x_i\cdot \mathbf n_i)  \mathrm ds\\
-=& \sum_{e_i\in\partial \Omega}(\mathbf x_i\cdot \mathbf n_i)\int_{e_i} \mathrm ds\\
+=& \frac{1}{2}\int_{\partial\Omega} \mathbf x\cdot \mathbf n \mathrm ds\\
+=& \frac{1}{2}\sum_{i=0}^{n-1}\int_{e_i} \mathbf x\cdot \mathbf n_i  \mathrm ds\\
+=& \frac{1}{2}\sum_{i=0}^{n-1}\int_{e_i} (\mathbf x - \mathbf x_i + \mathbf x_i)\cdot \mathbf n_i\mathrm ds\\
+=& \frac{1}{2}\sum_{i=0}^{n-1}\int_{e_i} \mathbf x_i\cdot \mathbf n_i  \mathrm ds\\
+=& \frac{1}{2}\sum_{i=0}^{n-1}\mathbf x_i\cdot \mathbf n_i \int_{e_i} \mathrm ds\\
 \end{align}
 $$
 
-推广一下， 还可以把一些特殊一点的函数在高维区域函数积分， 转化为低维区域积分的问题。 
+推广一下， 还可以把一些特殊一点的函数在高维区域函数积分， 转化为低维区域积分的问题。 如**齐次函数**
+
+$$
+f(\lambda\mathbf x) = \lambda^qf(\mathbf x),\quad \forall \lambda > 0
+$$
+
+记 $$\mathbf y = \lambda \mathbf x $$, 上式对 $$\lambda$$ 求导
+
+$$
+q\lambda^{q-1}f(\mathbf x) = \nabla_{\mathbf y}f \cdot\frac{\partial\mathbf y}{\partial \lambda} =\nabla_{\mathbf y}f \cdot \mathbf x
+$$
+
+取 $$\lambda = 1$$, 可得：
+
+$$
+qf(\mathbf x) = \nabla f(\mathbf x)\cdot\mathbf x
+$$
+
+给定一个定义在多边形 $E$ 上的齐次函数 $f(\mathbf x)$, 记 
+
+$$
+\mathbf F: = \mathbf x f(\mathbf x)
+$$
+
+代入散度定理公式
+
+$$
+\int_E\nabla\cdot\mathbf F \mathrm d \mathbf x = \int_{\partial E} \mathbf F\cdot \mathbf n\mathrm ds
+$$
+
+可得
+
+$$
+\begin{align}
+& \int_E\nabla\cdot[\mathbf x f(\mathbf x)]\mathrm d \mathbf x \\
+=& \int_E (\nabla\cdot\mathbf x)f(\mathbf x)\mathrm d \mathbf x + 
+\int_E \mathbf x\cdot \nabla f(\mathbf x)\mathrm d \mathbf x\\
+=& 2 \int_E f(\mathbf x)\mathrm d \mathbf x + 
+\int_E qf(\mathbf x)\mathrm d \mathbf x\\
+=& (q+2) \int_E f(\mathbf x)\mathrm d \mathbf x \\
+\end{align}
+$$
 
 还可以把高阶的微分算子变成低阶的微分算子。 比如 Laplace 算子：
 $$
