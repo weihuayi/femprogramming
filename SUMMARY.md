@@ -16,4 +16,5 @@
 * [重心坐标](zhong-xin-zuo-biao.md)
 * [线性有限元](xian-xing-you-xian-yuan.md)
 * [Lagrange 插值向量化实现](lagrange-cha-zhi-xiang-liang-hua-shi-xian.md)
+* [mumps](mumps.md)
 
