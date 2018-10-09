@@ -8,6 +8,7 @@
 * [Python 函数：function](python-han-shu.md)
 * [稀疏矩阵](xi-shu-ju-zhen.md)
 * [散度定理](san-du-ding-li.md)
+* [mumps](mumps.md)
 * [NumPy 简介](./numpy.md)
 * [Fealpy 简介](./fealpy.md)
 * [问题集](./problem.md)
@@ -15,6 +16,4 @@
 * [SageMath 简介](sagemath-jian-jie.md)
 * [重心坐标](zhong-xin-zuo-biao.md)
 * [线性有限元](xian-xing-you-xian-yuan.md)
-* [Lagrange 插值向量化实现](lagrange-cha-zhi-xiang-liang-hua-shi-xian.md)
-* [mumps](mumps.md)
 
