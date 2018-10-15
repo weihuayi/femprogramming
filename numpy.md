@@ -9,7 +9,11 @@ Python 是一门**高级计算机编程语言（high-level computer language)**,
 
 而在科学计算中， 往往要对大量的整数或浮点数进行运算， 而且对程序的执行速度要求很高。 这时直接用 Python 的整型和浮点型（比如用前面讲的列表存储）就会大大拖慢程序的执行速度， 从这个角度来说， Python 语言本身是不适合科学计算的， 其实 Guido van Rossum 设计 Python 的初衷就不是为了科学计算。 但是 Python 的易用性吸引了科学计算圈子里的人。
 
-![](./figures/zhuyi.jpeg)
+<figure class="half">
+    <img src="./figures/zhuyi.jpeg">
+    <img src="./figures/python.jpeg">
+</figure>
+
 
 >  “Python 这么好用！ 没有我想要的功能？！ 那我们就来做一个吧！” 只有在开源世界， 你才可以这么随意和任性。
 
