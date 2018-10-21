@@ -17,4 +17,5 @@
 * [SageMath 简介](sagemath-jian-jie.md)
 * [重心坐标](zhong-xin-zuo-biao.md)
 * [线性有限元](xian-xing-you-xian-yuan.md)
+* [Numpy: ndarray](numpy-ndarray.md)
 
