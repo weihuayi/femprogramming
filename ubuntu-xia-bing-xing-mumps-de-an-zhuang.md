@@ -19,7 +19,47 @@ $ cp ../lib/libesmumps.a /home/why/local/multicore/lib/
 $ cp ../include/esmumps.h /home/why/local/multicore/include/
 ```
 
-### 
+### metis
+
+把 metis.h 中的
+
+```
+#define IDXTYPEWIDTH 32 
+#define REALTYPEWIDTH 32
+```
+
+修改为 
+
+```
+#define IDXTYPEWIDTH 32 
+#define REALTYPEWIDTH 64
+```
+
+```
+$ make config prefix=/home/why/local/multicore
+$ make -j8
+$ make install
+```
+
+### OpenBLAS
+
+```
+$ make -j8 NO_SHARE=1
+$ make PREFIX=/home/why/local/multicore install
+```
+
+### MUMPS
+
+```
+$ cp Make.inc/Makefile.inc.generic.SEQ  ./Makefile.inc
+```
+```
+cp include/* /home/why/local/multicore/include/
+cp lib/* /home/why/local/multicore/lib/
+cp libseq/libmpiseq.a /home/why/local/multicore/lib/
+cp libseq/*.h /home/why/local/multicore/include/
+```
+
 
 ## 安装依赖软件包 
 
