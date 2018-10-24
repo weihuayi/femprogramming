@@ -3,7 +3,7 @@
 因为 Ubuntu 系统中自带的 MUMPS 的版本比较旧， 所以想用比较新的版本， 就需要学会自己编译安装 MUMPS。 本文将介绍 Ubuntu 下的 MUMPS 及其依赖软件包的安装过程编译安装过程， 其它的 Linux 发行版本类似可以安装。 
 
 ## 多核版本的安装过程 
-
+https://mailman-mail5.webfaction.com/pipermail/kwant-discuss/2016-October/000976.html
 ### scotch
 ```
 cd scotch_6.0.4/src/
