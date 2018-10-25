@@ -44,8 +44,8 @@ $ make install
 ### OpenBLAS
 
 ```
-$ make -j8 NO_SHARE=1
-$ make PREFIX=/home/why/local/multicore install
+$ make -j8 NO_SHARED=1
+$ make PREFIX=/home/why/local/multicore NO_SHARED=1 install
 ```
 
 ### MUMPS
