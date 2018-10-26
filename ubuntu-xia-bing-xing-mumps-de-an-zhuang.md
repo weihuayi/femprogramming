@@ -2,10 +2,35 @@
 
 因为 Ubuntu 系统中自带的 MUMPS 的版本比较旧， 所以想用比较新的版本， 就需要学会自己编译安装 MUMPS。 本文将介绍 Ubuntu 下的串行 MUMPS 及其依赖软件包的编译安装过程， 其它的 Linux 发行版本类似可以安装。
 
-这里要用到以下三个包
- 
-* metis： http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz
-* scotch
+MUMPS 可以调用 `metis` 来做稀疏矩阵元素的重新排序， 可以大大减少矩阵分解产生的非零元，从而节省矩阵分解需要的内存开销。
+
+```
+$ wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz
+$ gunzip metis-5.1.0.tar.gz
+$ tar -xvf metis-5.1.0.tar
+$ cd metis-5.1.0/
+```
+如果需要 `metis` 支持 64 位的整型和浮点型， 可以把 `include/metis.h` 中的 
+
+```
+#define IDXTYPEWIDTH 32
+#define REALTYPEWIDTH 32
+```
+修改为
+
+```
+#define IDXTYPEWIDTH 64 
+#define REALTYPEWIDTH 64
+```
+然后编译安装：
+```
+$ make config prefix=/home/why/local/multicore # 替换为你的安装路径
+$ make -j8 # 并行编译， 8 个核
+$ make install
+```
+
+
+* scotch：
 * openblas
 
 目前大部分的个人电脑的 CPU 都是多核的， 为了充分利用多核资源， 获得更快的计算速度，
