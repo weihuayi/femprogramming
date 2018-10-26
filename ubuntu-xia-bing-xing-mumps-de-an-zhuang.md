@@ -1,8 +1,10 @@
 # Ubuntu 下的 MUMPS 安装过程
 
 因为 Ubuntu 系统中自带的 MUMPS 的版本比较旧， 所以想用比较新的版本， 就需要学会自己编译安装 MUMPS。 本文将介绍 Ubuntu 下的串行 MUMPS 及其依赖软件包的编译安装过程， 其它的 Linux 发行版本类似可以安装。
+
+这里要用到以下三个包
  
-* metis
+* metis： http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz
 * scotch
 * openblas
 
