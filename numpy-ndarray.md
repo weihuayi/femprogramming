@@ -20,9 +20,9 @@ cell = np.array([[1, 2, 0],
 ```
 代码第一行导入 `numpy` 模块， 并且用 `as` 语法重新把模块简写为 `np`。 这是一个**约定俗成的习惯**， 你平时最好也这样写, 方便大家阅读你的代码。 
 
-接着用 Numpy 中的数组创建函数 `np.array` 函数创建两个数组： `node` 和 `cell`， 存储的数据类型分别指定为 `np.float`(64 位浮点型） 和 `np.int32` (32 位整型). 
+接着用数组创建函数 `np.array` 创建两个数组： `node` 和 `cell`， 存储的数据类型分别指定为 `np.float`(64 位浮点型） 和 `np.int32` (32 位整型). 
 
-在 IPython 中用运行上述代码后， 用 `type` 函数可以检查 `node` 和 `cell` 的数据类型， 都为 `numpy.ndarray`。
+在 IPython 中用运行上述代码后， 用 `type` 函数可以检查 `node` 和 `cell` 的数据类型， 都为 `numpy.ndarray` 多维数组对象。
 
 ```
 In [10]: type(node)
@@ -32,15 +32,16 @@ In [11]: type(cell)
 Out[11]: numpy.ndarray
 ```
 
-`ndarray` 对象有很多属性， 常用的有 `shape` 属性， 它是一个 `tuple` 对象， 存储了 `ndarray` 对象的形状。 `shape[i]` 就存储的是 `ndarray` 对象的第 `i` 轴 (axis) 长度。
+`ndarray` 对象有很多属性， 常用的有 `shape` 属性， 它是一个 `tuple` 对象， 存储了 `ndarray` 对象的形状。 `shape[i]` 就存储的是 `ndarray` 对象的第 `i` 轴 (axis) 长度。 另外， `ndarray` 还有另一个属性 `ndim`, 存储了多维数组的维数。
 
 ```
-In [12]: print(node.shape)
-(4, 2) # node 的第 0 轴长度为 4 ， 第 1 轴长度为 2
+In [12]: print(node.ndim, node.shape)
+2 (4, 2) # node 是 2 维数组， 第 0 轴长度为 4 ， 第 1 轴长度为 2
 
 In [13]: print(cell.shape)
-(2, 3) # cell 的第 0 轴长度为 2, 第 1 轴长度为 3
+(2, 3) # cell 是 2 维数组， 第 0 轴长度为 2, 第 1 轴长度为 3
 ```
+
 下面上一个 `ndarray` 的图片(来自： https://www.oreilly.com/library/view/elegant-scipy/9781491922927/assets/elsp_0105.png)， 让大家直观感受一下多维数组中**轴**的概念。
 ![](./figures/ndarray.png)
 
