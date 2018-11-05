@@ -11,6 +11,7 @@
 * [NumPy 简介](./numpy.md)
 * [Ubuntu 下并行 Mumps 的安装](ubuntu-xia-bing-xing-mumps-de-an-zhuang.md)
 * [网格数据结构的数组化表示：node 和 cell](numpy-mesh-node-cell.md)
+* [网格数据结构的数组化表示：edge](numpy-mesh-edge.md)
 * [Mumps 简介](mumps-jian-jie.md)
 * [NumPy 简介](./numpy.md)
 * [Fealpy 简介](./fealpy.md)
